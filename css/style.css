@@ -1,0 +1,278 @@
+:root {
+  --dark-gray-color: #333;
+  --dark-gray-hover-color: #403f3f;
+  --white-color: #f1f1f1;
+  --off-white-color: #e3e3e3;
+  --light-gray-color: #ccc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Grid */
+body {
+  font-family: 'Nunito', sans-serif;
+  max-width: 120em;
+  margin: 0 auto;
+  background-color: var(--light-gray-color);
+  font-size: 1.8rem;
+  line-height: 1.6;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+}
+
+header {
+  grid-area: header;
+}
+
+.index-main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'hero'
+    'introduction'
+    'about-me'
+    'site-contents';
+}
+
+#hero {
+  grid-area: hero;
+}
+
+#introduction {
+  grid-area: introduction;
+}
+
+#about-me {
+  grid-area: about-me;
+}
+
+#site-contents {
+  grid-area: site-contents;
+}
+
+.portfolio-main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'hero'
+    'portfolio'
+    'footer';
+}
+
+#portfolio {
+  grid-area: portfolio;
+}
+
+.blog-main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'hero'
+    'blog-post'
+    'footer';
+}
+
+#blog-post {
+  grid-area: blog-post;
+}
+
+footer {
+  grid-area: footer;
+}
+
+header,
+section,
+footer {
+  /* padding: 0 2em; */
+}
+
+.hero {
+  max-width: 120em;
+  margin: 0 auto;
+}
+
+#hero,
+#about-me,
+#call-to-action {
+  background-color: var(--off-white-color);
+  color: var(--dark-gray-color);
+}
+nav,
+#introduction,
+#site-contents,
+#blog-post,
+#portfolio,
+#copyright {
+  background-color: var(--dark-gray-color);
+  color: var(--white-color);
+}
+
+nav,
+li a,
+footer form input[type='submit'] {
+  color: var(--white-color);
+}
+
+li a,
+footer form input[type='submit'] {
+  transition: all 0.3s ease-in-out;
+}
+
+nav {
+  padding: 1em;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+
+li a {
+  padding: 1em;
+  text-decoration: none;
+}
+
+li a.active {
+  font-weight: 700;
+}
+
+li a:hover {
+  color: var(--dark-gray-hover-color);
+  background-color: var(--off-white-color);
+}
+
+/* Flex */
+#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* CSS Animations*/
+#hero h1 {
+  animation: hero-title 3s ease-in-out;
+}
+
+@keyframes hero-title {
+  0% {
+    opacity: 0;
+    transform: translateY(-2em);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#hero img {
+  border-radius: 50%;
+  padding-bottom: 1em;
+  animation: hero-img 3s ease-in-out;
+}
+
+@keyframes hero-img {
+  0% {
+    opacity: 0;
+    transform: translateY(2em);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  padding: 4em;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
+section h2 {
+  margin-bottom: 1em;
+}
+
+#about-me > p > a {
+  color: var(--dark-gray-color);
+  font-weight: 700;
+}
+section p {
+  text-align: justify;
+}
+
+#portfolio > p > a {
+  text-decoration: none;
+  color: var(--white-color);
+  font-weight: 700;
+}
+footer h2 {
+  text-align: center;
+}
+
+footer form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 2em;
+}
+
+footer form input[type='text'],
+footer form input[type='email'] {
+  padding: 1em;
+  border: 0.1em solid var(--dark-gray-color);
+  border-radius: 0.4em;
+  color: var(--dark-gray-color);
+}
+
+footer form input[type='text']:focus,
+footer form input[type='email']:focus {
+  outline: none;
+  border: 0.1em solid var(--dark-gray-hover-color);
+}
+
+footer form input[type='submit'] {
+  background-color: var(--dark-gray-color);
+  border: none;
+  padding: 1em 2em;
+  text-decoration: none;
+  margin: 1em 0.2em;
+  cursor: pointer;
+}
+
+footer form input[type='submit']:hover {
+  background-color: var(--dark-gray-hover-color);
+}
